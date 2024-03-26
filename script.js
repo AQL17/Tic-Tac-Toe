@@ -1,52 +1,71 @@
 // Gameboard
 
-const game = (function () {
-   const board = [];
-   const rows = 3;
-   const columns = 3;
+function player(name , token){
+    const getname = () =>  name;
+    const gettoken = () => token;
+    
+    return{getname , gettoken}
+} 
 
 
-   for(let i = 0; i < rows; i++){
-        board[i] = [];
-        for(let j = 0; j < columns; j++){
-            board[i].push(0);
-        }
+
+const gameboard = (function () {
+   let board = [];
+   board = [[0,0,0] , [0,0,0], [0,0,0]];
+
+   const resetboard = () => {
+    board = [[0,0,0] , [0,0,0] , [0,0,0]];
    }
-
    console.log(board);
 
-   let player1 = {
-    name: "player1",
-    token : "X"
-   }
+   let player1 = player('Player1' , 'X');
 
-   let player2 = {
-    name : "player2",
-    token : "O"
-   }
+   let player2 = player('Player2' , 'O')
 
    const getPlayers = () => [player1 , player2]
 
    const getboard = () => board;
  
 
-   return {getboard , getPlayers}
+   return {getboard , getPlayers , resetboard}
 })();
+
+
+function gameManager(){
+    const newround = () =>{
+        gameboard.resetboard();
+    }
+
+    const checkwin = () => {
+        
+    }
+}
+
+
+
+const playround = (function (){
+const [player1 , player2] = gameboard.getPlayers();
+
+let activePlayer = player1; 
 
 function entervalue(number1 , number2){
     let board = game.getboard();
-    board[number1][number2] = 'x';
+    board[number1][number2] = activePlayer.gettoken();
     console.log(board);
+    switchplayer();
 }
 
 function switchplayer(){
-    const [player1 , player2] = game.getPlayers();
-    let activePlayer = player1;
 
     let test = (activePlayer == player1) ? activePlayer = player2 : activePlayer = player1;
 
-    console.log(test);
+
+    console.log(`${activePlayer.getname()}'s turn`);
 }
+return{entervalue , switchplayer}
+}
+)();
+
 
 
 
