@@ -1,0 +1,54 @@
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100%;
+    width : 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Header ,.turn-display{
+    padding: 0;
+    width: 100%;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+.main-grid{
+    height: 50%;
+    width: 25%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+    background-color: black;
+
+    
+}
+.cell{
+    height: 100%;
+    width: 100%;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.player-display{
+    height: auto;
+    margin: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border: 2px solid black;
+    
+}

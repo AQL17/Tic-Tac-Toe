@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Tic-Tac-Toe</title>
+
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="Header">
+            <h1>TIC TAC TOE</h1>
+        </div>
+        
+        <div class="player-display">
+                <div>
+                    <h2>Player1 <br> X <br> WINS:</h2>
+                    <h2 class="score1">0</h2>
+                </div>
+                <div>
+                    <h2>Player2 <br> O <br> WINS:</h2>
+                    <h2 class="score2">0</h2>
+
+                </div>
+        </div>
+        <div class="main-grid">
+
+            <div class="cell" data-x=0 data-y=0></div>
+            <div class="cell" data-x=0 data-y=1></div>
+            <div class="cell" data-x=0 data-y=2></div>
+
+            <div class="cell" data-x=1 data-y=0></div>
+            <div class="cell" data-x=1 data-y=1></div>
+            <div class="cell" data-x=1 data-y=2></div>
+
+            <div class="cell" data-x=2 data-y=0></div>
+            <div class="cell" data-x=2 data-y=1></div>
+            <div class="cell" data-x=2 data-y=2></div>
+
+        </div>
+        <h2 class="turn-display">None</h2>
+        
+    </div>
+
 </body>
+
 </html>
